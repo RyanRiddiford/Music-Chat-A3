@@ -1,4 +1,5 @@
-﻿@model music_chat.Models.ViewModel.PlaybackViewModel;
+﻿@using music_chat.Models.ResponseModel;
+@model music_chat.Models.ViewModel.PlaybackViewModel;
 
 
 
@@ -206,8 +207,7 @@
                 @if (artistR != null)
                 {
 
-
-                @if (artistR != null)
+                        @if (artistR != null)
                 foreach(var artist in artistR.items)
                 {
                     
@@ -215,7 +215,17 @@
 
                                         <div class="search-results-artist-left">
                         <div class="artist-image search-item-attribute">
-                        <img class="artist-image-img" src="@artist.images.FirstOrDefault()!.url">
+                                            @if (artist.images != null)
+                                            {
+                                                <img class="artist-image-img" src="@artist.images.FirstOrDefault().url">
+                                            } else
+                                            {
+                                                 <div class="artist-image-img" style="background-color:black;">
+
+                                                 </div>
+                                            }
+
+   
                         </div>
 
                     <div class="item-name search-item-attribute">
@@ -266,7 +276,25 @@
                         <div class="search-results-artist-left">
 
                         <div class="artist-image search-item-attribute">
-                        <img class="artist-image-img" src="@album.images!.FirstOrDefault()!.url">
+                                            @if (album.images != null)
+                                            {
+                                                if (album.images.Length > 0)
+                                                {
+                                                    <img class="artist-image-img" src="@album.images?.FirstOrDefault()?.url">
+                                                } else
+                                            {
+                                                 <div class="artist-image-img" style="background-color:black;">
+
+                                                 </div>
+                                            }
+                                                
+                                            } else
+                                            {
+                                                 <div class="artist-image-img" style="background-color:black;">
+
+                                                 </div>
+                                            }
+
                         </div>
 
                         <div class="search-results-text-component">

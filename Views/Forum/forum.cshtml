@@ -2,14 +2,22 @@
 @using music_chat.Helpers;
 @model List<ForumViewModel>;
 
+    @{
+ string displayDate = "";
+    }
 
 
 
 <div class="chat-component-container">
 <h1>Forum Chat</h1>
     <div class="chat-message-display">
+
+       
         @foreach (ForumViewModel ViewModelItem in Model)
         {
+
+
+            displayDate = @ViewModelItem.timestamp.ToLocalTime().ToString();
             <div class="post">
                     <div class="post-header">
                         <div class="post-author-image">
@@ -20,7 +28,7 @@
                             <span>Author: @ViewModelItem.AuthorUsername</span>
                         </div>
                         <div class="post-timestamp">
-                            <span> Posted On: @ViewModelItem.timestamp.ToLocalTime()</span>
+                            <span> Posted On: @displayDate</span>
                         </div>
                         </div>
 
