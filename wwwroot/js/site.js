@@ -1,6 +1,6 @@
 ﻿
 //Plays a new song and updates the web player interface with song metadata
-async function  {
+async function PlayNewSong(uri, access_token, track, artist) {
 
     let id = document.getElementById("device-to-use").value;
 
