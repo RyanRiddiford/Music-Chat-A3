@@ -21,5 +21,7 @@ namespace music_chat.Models.DTO
 
         public DateTime timestamp { get; set; }
 
+        public DateTime date { get; set; }
+
     }
 }
