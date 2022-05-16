@@ -6,6 +6,11 @@
     public class ArtistItems : IItems
     {
 
+        public ArtistItems()
+        {
+            this.images = null;
+        }
+
         public string? id { get; set; }
 
         public string? href { get; set; }
@@ -16,7 +21,7 @@
 
         public string? uri { get; set; }
 
-        public ImageItem[] images { get; set; }
+        public ImageItem[]? images { get; set; }
 
     }
 }
