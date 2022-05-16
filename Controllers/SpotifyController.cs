@@ -249,6 +249,18 @@ namespace music_chat.Controllers
 
             }
 
+            foreach(var artist in vm.ArtistSearchResults.items)
+            {
+                if(artist.images == null)
+                {
+                    artist.images = null;
+                }
+                else if(artist.images.Length == 0)
+                {
+                    artist.images = null;
+                }
+            }
+
             vm.accessToken = HttpContext.Session.GetString("access_token");
 
             return View("Spotify", vm);
