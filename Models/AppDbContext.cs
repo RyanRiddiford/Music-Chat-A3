@@ -29,6 +29,8 @@ namespace music_chat.Models
 
             List<Post> seedPosts = new List<Post>();
             int seedPostId = 1;
+            int seedPostSecondCount = 10;
+            string timestamp = "";
 
             List<Guid> guids = new List<Guid>();
 
@@ -45,19 +47,19 @@ namespace music_chat.Models
 
                 new Account
                 {
-                    ImageUrl = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPEG",
+                    ImageUrl = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPG",
                     Username = "user1",
                     Id = guids.ToArray()[0]
                 },
                 new Account
                 {
-                    ImageUrl = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user2.JPEG",
+                    ImageUrl = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user2.JPG",
                     Username = "user2",
                     Id = guids.ToArray()[1]
                 },
                 new Account
                 {
-                    ImageUrl = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user3.JPEG",
+                    ImageUrl = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user3.JPG",
                     Username = "user3",
                     Id = guids.ToArray()[2]
                 }
@@ -91,64 +93,90 @@ namespace music_chat.Models
             //Generate posts for seeding
             for(int i = 0; i < 10; i++)
             {
+                timestamp = "2022-05-01T12:12:" + seedPostSecondCount;
                 seedPosts.Add(new Post
                 {
                     Id = seedPostId.ToString(),
-                    AuthorProfileImage = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPEG",
+                    AuthorProfileImage = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPG",
                     AuthorUsername = "user1",
                     Content = "Test Message " + seedPostId,
-                    timestamp = DateTime.Parse("2022-05-01").ToUniversalTime(),
+                    timestamp = DateTime.Parse(timestamp).ToUniversalTime(),
+                    date = DateTime.Parse("2022-05-01").ToUniversalTime().Date
                 });
                 seedPostId++;
+                seedPostSecondCount++;
             }
+
+            seedPostSecondCount = 10;
 
             for(int i = 0; i < 15; i++)
             {
+                timestamp = "2022-05-02T12:12:" + seedPostSecondCount;
                 seedPosts.Add(new Post
                 {
                     Id = seedPostId.ToString(),
-                    AuthorProfileImage = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPEG",
+                    AuthorProfileImage = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPG",
                     AuthorUsername = "user1",
                     Content = "Test Message " + seedPostId,
-                    timestamp = DateTime.Parse("2022-05-02").ToUniversalTime(),
+                    timestamp = DateTime.Parse(timestamp).ToUniversalTime(),
+                    date = DateTime.Parse("2022-05-02").ToUniversalTime().Date
                 });
                 seedPostId++;
+                seedPostSecondCount++;
             }
+
+            seedPostSecondCount = 10;
+
             for(int i = 0; i < 18; i++)
             {
+                timestamp = "2022-05-03T12:12:" + seedPostSecondCount;
                 seedPosts.Add(new Post
                 {
                     Id = seedPostId.ToString(),
-                    AuthorProfileImage = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPEG",
+                    AuthorProfileImage = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPG",
                     AuthorUsername = "user1",
                     Content = "Test Message " + seedPostId,
-                    timestamp = DateTime.Parse("2022-05-03").ToUniversalTime(),
+                    timestamp = DateTime.Parse(timestamp).ToUniversalTime(),
+                    date = DateTime.Parse("2022-05-03").ToUniversalTime().Date
                 });
                 seedPostId++;
+                seedPostSecondCount++;
             }
+
+            seedPostSecondCount = 10;
+
             for(int i = 0; i < 20; i++)
             {
+                timestamp = "2022-05-04T12:12:" + seedPostSecondCount;
                 seedPosts.Add(new Post
                 {
                     Id = seedPostId.ToString(),
-                    AuthorProfileImage = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPEG",
+                    AuthorProfileImage = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPG",
                     AuthorUsername = "user1",
                     Content = "Test Message " + seedPostId,
-                    timestamp = DateTime.Parse("2022-05-04").ToUniversalTime(),
+                    timestamp = DateTime.Parse(timestamp).ToUniversalTime(),
+                    date = DateTime.Parse("2022-05-04").ToUniversalTime().Date
                 });
                 seedPostId++;
+                seedPostSecondCount++;
             }
+
+            seedPostSecondCount = 10;
+
             for(int i = 0; i < 25; i++)
             {
+                timestamp = "2022-05-05T12:12:" + seedPostSecondCount;
                 seedPosts.Add(new Post
                 {
                     Id = seedPostId.ToString(),
                     AuthorProfileImage = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPEG",
                     AuthorUsername = "user1",
                     Content = "Test Message " + seedPostId,
-                    timestamp = DateTime.Parse("2022-05-05").ToUniversalTime(),
+                    timestamp = DateTime.Parse(timestamp).ToUniversalTime(),
+                    date = DateTime.Parse("2022-05-05").ToUniversalTime().Date
                 });
                 seedPostId++;
+                seedPostSecondCount++;
             }
 
             //Add seed posts
