@@ -272,9 +272,10 @@ namespace music_chat.Controllers
             await _appDbContext.Posts.AddAsync(new Post
             {
                 Content = CreateSongSuggestionMessage(trackName, id, href, uri, albumName, artistName),
-                timestamp = DateTime.UtcNow.Date,
+                timestamp = DateTime.UtcNow,
                 AuthorUsername = HttpContext.Session.GetString("username"),
                 AuthorProfileImage = HttpContext.Session.GetString("image"),
+                date = DateTime.UtcNow.Date,
             });
 
             await _appDbContext.SaveChangesAsync();
@@ -297,9 +298,10 @@ namespace music_chat.Controllers
             await _appDbContext.Posts.AddAsync(new Post
             {
                 Content = CreateArtistSuggestionMessage(artistName, id, href, uri),
-                timestamp = DateTime.UtcNow.Date,
+                timestamp = DateTime.UtcNow,
                 AuthorUsername = HttpContext.Session.GetString("username"),
                 AuthorProfileImage = HttpContext.Session.GetString("image"),
+                date = DateTime.UtcNow.Date,
             });
 
             await _appDbContext.SaveChangesAsync();
@@ -323,9 +325,10 @@ namespace music_chat.Controllers
             await _appDbContext.Posts.AddAsync(new Post
             {
                 Content = CreateAlbumSuggestionMessage(albumName, artistName, id, href, uri),
-                timestamp = DateTime.UtcNow.Date,
+                timestamp = DateTime.UtcNow,
                 AuthorUsername = HttpContext.Session.GetString("username"),
                 AuthorProfileImage = HttpContext.Session.GetString("image"),
+                date = DateTime.UtcNow.Date,
             });
 
             await _appDbContext.SaveChangesAsync();
