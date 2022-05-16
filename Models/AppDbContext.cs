@@ -169,7 +169,7 @@ namespace music_chat.Models
                 seedPosts.Add(new Post
                 {
                     Id = seedPostId.ToString(),
-                    AuthorProfileImage = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPEG",
+                    AuthorProfileImage = "https://myapp-a3-cloud.s3.ap-southeast-2.amazonaws.com/user1.JPG",
                     AuthorUsername = "user1",
                     Content = "Test Message " + seedPostId,
                     timestamp = DateTime.Parse(timestamp).ToUniversalTime(),
