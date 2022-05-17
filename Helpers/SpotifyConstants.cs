@@ -30,10 +30,10 @@ namespace music_chat.Helpers
 "playlist-modify-private"
         };
 
-        public static string clientID = "e183c30a8a7d43b4bb704a33f3f4182b";
-        public static string clientSecret = "0352c6e9e78943eba1adc26e6ff27894";
+        public static string clientID = "";
+        public static string clientSecret = "";
 
-        public static string redirect_uri = "https://ryan-riddiford.com/Spotify/Callback";
+        public static string redirect_uri = "";
 
         public static string authUrl = "https://accounts.spotify.com/authorize";
         public static string tokenUrl = "https://accounts.spotify.com/api/token";
