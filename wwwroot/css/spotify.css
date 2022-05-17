@@ -91,7 +91,7 @@
 .spotify-search-results {
     padding: 1%;
     border-radius: 10px;
-    min-width: fit-content;
+    min-width: 500px;
 }
 
 .spotify-search-results-header {
@@ -110,7 +110,7 @@
 .search-results-item {
     list-style: none;
     display: flex;
-    width: 30vw;
+    width: 40vw;
     flex-direction: row;
     justify-content: space-between;
     padding: 1%;
@@ -122,8 +122,8 @@
 }
 
 .search-item-attribute {
-    margin-left: 1%;
-    margin-right: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .search-results-text-component {
@@ -141,6 +141,8 @@
 .search-results-button-component {
     display: flex;
     flex-direction: row;
+    margin-right: 5vw;
+    padding-right: 50px;
 }
 
 .play-track-button, .item-suggest {
@@ -149,7 +151,7 @@
 }
 
 .suggest-button, .play-track-button {
-    width: 7vw;
+    width: 5vw;
     height: 5vh;
     min-width: fit-content;
 }
