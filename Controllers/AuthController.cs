@@ -120,19 +120,23 @@ namespace music_chat.Controllers
 
                     fileId = Guid.NewGuid().ToString() + ".jpg";
 
-                    var uploadRequest = new TransferUtilityUploadRequest
-                    {
-                        InputStream = memStream,
-                        Key = fileId,
-                        BucketName = AWSConstants.AWS_BUCKET_NAME,
-                        CannedACL = S3CannedACL.PublicRead,
+                var uploadRequest = new TransferUtilityUploadRequest
+                {
+                    InputStream = memStream,
+                    Key = fileId,
+                    BucketName = AWSConstants.AWS_BUCKET_NAME,
+                    CannedACL = S3CannedACL.PublicRead,
 
-                    };
+                };
+                var fTransferUtil = new TransferUtility(_amazonS3);
+                await fTransferUtil.UploadAsync(uploadRequest);
 
-                    var fTransferUtil = new TransferUtility(_amazonS3);
-                    await fTransferUtil.UploadAsync(uploadRequest);
+
+
+              
 
                 }
+
           
 
 
